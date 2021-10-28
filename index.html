@@ -9,36 +9,42 @@
   </head>
   <body>
     <div class="wrap">
-      <form action="">
+      <form action="" onsubmit="handleSubmit()">
         <h2>Ro'yxatdan o'tish</h2>
         <div class="input_row">
           <div class="input_wrap">
             <label for="firstName"> Ismingizni kiriting: </label>
             <input type="text" placeholder="Ismingiz" id="firstName" />
+            <p class="error"></p>
           </div>
           <div class="input_wrap">
             <label for="lastName"> Familiyangizni kiriting: </label>
             <input type="text" placeholder="Familiyangiz" id="lastName" />
+            <p class="error"></p>
           </div>
         </div>
         <div class="input_row">
           <div class="input_wrap">
             <label for="userName"> Username kiriting: </label>
             <input type="text" placeholder="Username" id="userName" />
+            <p class="error"></p>
           </div>
           <div class="input_wrap">
             <label for="email"> Emailingizni kiriting: </label>
             <input type="text" placeholder="Emailingiz" id="email" />
+            <p class="error"></p>
           </div>
         </div>
         <div class="input_row">
           <div class="input_wrap">
             <label for="password"> Parol kiriting: </label>
             <input type="password" placeholder="Parolingiz" id="password" />
+            <p class="error"></p>
           </div>
           <div class="input_wrap">
             <label for="r_password"> Parolingizni takrorlang: </label>
             <input type="password" placeholder="Parolingiz" id="r_password" />
+            <p class="error"></p>
           </div>
         </div>
         <div>

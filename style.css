@@ -76,3 +76,9 @@ button:hover {
   color: rgb(5, 187, 81);
   border: 2px solid rgb(5, 187, 81);
 }
+
+.error {
+  margin-top: 0.2rem;
+  text-align: left;
+  color: red;
+}
