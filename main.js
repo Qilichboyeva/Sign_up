@@ -7,48 +7,34 @@ const handleSubmit = () => {
   const password = document.getElementById("password").value;
   const r_password = document.getElementById("r_password").value;
   const errors = document.getElementsByClassName("error");
-
-// firstName
-function validateFname() {
-  const FirstName = document.getElementById('Name').value;
-  if(FirstName =="")
-  {
-    document.getElementById('exampleFirstName').innerHTML="Ismingizni to'ldiring";
-    return false;
-  }
-  return true;
- }
-// LastName
-function validateFname() {
-  const lastName = document.getElementById('Name').value;
-  if(LastName =="")
-  {
-    document.getElementById('exampleLastName').innerHTML="Familiyangiznii to'ldiring";
-    return false;
-  }
-  return true;
 };
 
-  if(lastName == "" {
-    document.getElementById('lastname').innerHTML = "Familiyangizni to'ldiring";
-    return false;
+const checkNames = (name) => {
+  let result;
+  let alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  if (name.length > 3 && name.length < 24) {
+    for (let i = 0; i < name.length; i++) {
+      result = alphabet.includes(name[i]);
+    }
   }
+  return result;
+};
 
-  if(userName == "") {
-    document.getElementById('username').innerHTML = "Usernamingizni to'ldiring";
-    return false;
+const checkUserName = (username) => {
+  let result;
+  let alphabet =
+    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  if (username.length > 3 && username.length < 24) {
+    for (let i = 0; i < username.length; i++) {
+      result = alphabet.includes(username[i]);
+    }
   }
+  return result;
+};
 
-  if(email == "") {
-    document.getElementById('email').innerHTML = "emailingizni to'ldiring";
-    return false;
+const checkPasswords = (p, r_p) => {
+  if (p.length >= 8) {
   }
+};
 
-  if((pass.length <= 2) ||(password.length > 10)) {
-    document.getElementById('password').innerHTML = "user length must be between 2 and 10";
-    return false;
-  }
-  if(r_password <= 2) || (r_password.length > 10) {
-    document.getElementById('r_password').innerHTML = " ++ Please fill the r_password field";
-    return false;
-  }
+console.log(checkUserName("diyorbek0309"));
