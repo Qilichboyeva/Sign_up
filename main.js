@@ -7,8 +7,52 @@ const handleSubmit = () => {
   const password = document.getElementById("password").value;
   const r_password = document.getElementById("r_password").value;
   const errors = document.getElementsByClassName("error");
+  let hasError = false;
+
   if (!checkNames(firstName)) {
-    errors[0].innerHTML = "zfjksgajfgvjashfgvfv";
+    hasError = true;
+    errors[0].innerHTML = "Ismingizni to'g'ri kiriting!";
+  } else {
+    errors[0].innerHTML = "";
+  }
+
+  if (!checkNames(lastName)) {
+    hasError = true;
+    errors[1].innerHTML = "Familiyangizni to'g'ri kiriting!";
+  } else {
+    errors[1].innerHTML = "";
+  }
+
+  if (!checkUserName(userName)) {
+    hasError = true;
+    errors[2].innerHTML = "Usernameni to'g'ri kiriting!";
+  } else {
+    errors[2].innerHTML = "";
+  }
+
+  if (!checkEmail(email)) {
+    hasError = true;
+    errors[3].innerHTML = "Emailingizni to'g'ri kiriting!";
+  } else {
+    errors[3].innerHTML = "";
+  }
+
+  if (comparePasswords(password, r_password)) {
+    errors[5].innerHTML = "";
+    if (!checkPasswords(password)) {
+      hasError = true;
+      errors[4].innerHTML = "Murakkab parol kiriting!";
+    } else {
+      errors[4].innerHTML = "";
+    }
+  } else {
+    hasError = true;
+    errors[5].innerHTML = "Parollar bir-biriga teng emas!";
+  }
+
+  if (!hasError) {
+    document.forms[0].submit();
+    alert("Siz ro'yxatdan o'tdingiz!");
   }
 };
 
@@ -75,5 +119,3 @@ const checkPasswords = (p) => {
 };
 
 const comparePasswords = (p, r_p) => p === r_p;
-
-console.log(checkEmail("diyorbe5454k@aaa.ru"));
